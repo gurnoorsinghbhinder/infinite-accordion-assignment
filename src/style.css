@@ -1,0 +1,164 @@
+
+:root {
+  /* Colors */
+  --primary-color: #007acc;
+  --primary-color-light: rgba(0, 122, 204, 0.2);
+  --text-color: #333;
+  --text-color-light: #666;
+  --text-color-muted: #999;
+  --bg-hover: #f0f0f0;
+  --bg-success: #d4edda;
+  --bg-danger: #f8d7da;
+  --border-color: #ccc;
+  --white: white;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 15px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 25px;
+  --spacing-xxxl: 30px;
+  --spacing-huge: 50px;
+
+  /* Font sizes */
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+
+  /* Border radius */
+  --border-radius-sm: 3px;
+  --border-radius-md: 5px;
+
+  /* Transitions */
+  --transition-fast: 0.2s;
+
+  /* Shadows */
+  --focus-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: var(--spacing-huge);
+    text-align: left;
+}
+
+.App > h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xxxl);
+}
+
+
+.folder-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.item-row:hover {
+    background-color: var(--bg-hover);
+}
+
+.item-row:hover .buttons {
+    opacity: 1;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+.item-info.file {
+    cursor: default;
+    color: var(--text-color-light);
+}
+
+
+.folder-icon {
+    margin-right: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.item-name {
+    flex: 1;
+    font-size: var(--font-size-md);
+    padding: 2px 4px;
+}
+
+.arrow {
+    margin-left: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-color-muted);
+}
+
+.folder-contents {
+    margin-left: var(--spacing-xxl);
+    padding-left: var(--spacing-lg);
+}
+
+
+.buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.add-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
+}
+
+.add-btn:hover {
+    background-color: var(--bg-success);
+}
+
+.delete-btn:hover {
+    background-color: var(--bg-danger);
+}
+
+.add-new-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+.add-input, .rename-box {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-md);
+    outline: none;
+    flex: 1;
+}
+
+.add-input:focus, .rename-box:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+}
+
+.rename-box {
+    background: var(--white);
+    margin-left: 0;
+}
